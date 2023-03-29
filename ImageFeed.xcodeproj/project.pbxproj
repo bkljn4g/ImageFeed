@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8959A61B29D4CCB7000EF543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8959A61A29D4CCB7000EF543 /* Assets.xcassets */; };
+		8959A61E29D4CE82000EF543 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959A61D29D4CE82000EF543 /* UIColor+Extensions.swift */; };
 		89B1B2F829C9DC4000C0146F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B1B2F729C9DC4000C0146F /* AppDelegate.swift */; };
 		89B1B2FA29C9DC4000C0146F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B1B2F929C9DC4000C0146F /* SceneDelegate.swift */; };
-		89B1B2FC29C9DC4000C0146F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B1B2FB29C9DC4000C0146F /* ViewController.swift */; };
+		89B1B2FC29C9DC4000C0146F /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B1B2FB29C9DC4000C0146F /* ImagesListViewController.swift */; };
 		89B1B2FF29C9DC4000C0146F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B1B2FD29C9DC4000C0146F /* Main.storyboard */; };
-		89B1B30129C9DC4100C0146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B1B30029C9DC4100C0146F /* Assets.xcassets */; };
 		89B1B30429C9DC4100C0146F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B1B30229C9DC4100C0146F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8959A61A29D4CCB7000EF543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8959A61D29D4CE82000EF543 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		89B1B2F429C9DC4000C0146F /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B1B2F729C9DC4000C0146F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B1B2F929C9DC4000C0146F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		89B1B2FB29C9DC4000C0146F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89B1B2FB29C9DC4000C0146F /* ImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
 		89B1B2FE29C9DC4000C0146F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		89B1B30029C9DC4100C0146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89B1B30329C9DC4100C0146F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89B1B30529C9DC4100C0146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8959A61829D4C7EC000EF543 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8959A61A29D4CCB7000EF543 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8959A61C29D4CE58000EF543 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8959A61D29D4CE82000EF543 /* UIColor+Extensions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		89B1B2EB29C9DC4000C0146F = {
 			isa = PBXGroup;
 			children = (
@@ -56,11 +74,12 @@
 		89B1B2F629C9DC4000C0146F /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				8959A61C29D4CE58000EF543 /* Helper */,
 				89B1B2F729C9DC4000C0146F /* AppDelegate.swift */,
 				89B1B2F929C9DC4000C0146F /* SceneDelegate.swift */,
-				89B1B2FB29C9DC4000C0146F /* ViewController.swift */,
+				89B1B2FB29C9DC4000C0146F /* ImagesListViewController.swift */,
 				89B1B2FD29C9DC4000C0146F /* Main.storyboard */,
-				89B1B30029C9DC4100C0146F /* Assets.xcassets */,
+				8959A61829D4C7EC000EF543 /* Resources */,
 				89B1B30229C9DC4100C0146F /* LaunchScreen.storyboard */,
 				89B1B30529C9DC4100C0146F /* Info.plist */,
 			);
@@ -126,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B1B30429C9DC4100C0146F /* LaunchScreen.storyboard in Resources */,
-				89B1B30129C9DC4100C0146F /* Assets.xcassets in Resources */,
+				8959A61B29D4CCB7000EF543 /* Assets.xcassets in Resources */,
 				89B1B2FF29C9DC4000C0146F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B1B2FC29C9DC4000C0146F /* ViewController.swift in Sources */,
+				89B1B2FC29C9DC4000C0146F /* ImagesListViewController.swift in Sources */,
 				89B1B2F829C9DC4000C0146F /* AppDelegate.swift in Sources */,
 				89B1B2FA29C9DC4000C0146F /* SceneDelegate.swift in Sources */,
+				8959A61E29D4CE82000EF543 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +326,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -339,7 +359,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
