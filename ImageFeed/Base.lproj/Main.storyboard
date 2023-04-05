@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rna-Dj-eNk" userLabel="cellImage">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rna-Dj-eNk" userLabel="cellImage">
                                                     <rect key="frame" x="16" y="4" width="382" height="216"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -42,35 +42,39 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DtV-ze-5g2" userLabel="likeButton">
-                                                    <rect key="frame" x="368" y="4" width="30" height="26"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="like_button_on"/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 апреля 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDr-Fb-LeT" userLabel="dateLabel">
-                                                    <rect key="frame" x="24" y="196" width="82" height="16"/>
+                                                    <rect key="frame" x="24" y="196" width="86.5" height="16"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                     <color key="textColor" name="YP White"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsH-kU-irN" userLabel="likeButton">
+                                                    <rect key="frame" x="356" y="4" width="42" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="Adz-MR-m6q"/>
+                                                        <constraint firstAttribute="height" constant="42" id="bYD-EH-KRc"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="" image="like_button_on"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" name="YP Black"/>
                                             <constraints>
+                                                <constraint firstItem="GsH-kU-irN" firstAttribute="top" secondItem="Rna-Dj-eNk" secondAttribute="top" id="0nk-bM-jig"/>
+                                                <constraint firstItem="Rna-Dj-eNk" firstAttribute="trailing" secondItem="GsH-kU-irN" secondAttribute="trailing" id="4CG-k1-9Yg"/>
                                                 <constraint firstItem="Rna-Dj-eNk" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pDr-Fb-LeT" secondAttribute="trailing" constant="8" id="89i-0j-HxK"/>
                                                 <constraint firstItem="Rna-Dj-eNk" firstAttribute="bottom" secondItem="pDr-Fb-LeT" secondAttribute="bottom" constant="8" id="CEC-HR-cJF"/>
                                                 <constraint firstItem="pDr-Fb-LeT" firstAttribute="leading" secondItem="Rna-Dj-eNk" secondAttribute="leading" constant="8" id="MID-e6-cUA"/>
                                                 <constraint firstItem="Rna-Dj-eNk" firstAttribute="leading" secondItem="xHn-IN-ALe" secondAttribute="leading" constant="16" id="R1H-84-RWj"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rna-Dj-eNk" secondAttribute="trailing" constant="16" id="bhb-yu-SHJ"/>
-                                                <constraint firstItem="Rna-Dj-eNk" firstAttribute="trailing" secondItem="DtV-ze-5g2" secondAttribute="trailing" id="jvH-cW-IYx"/>
                                                 <constraint firstItem="Rna-Dj-eNk" firstAttribute="top" secondItem="xHn-IN-ALe" secondAttribute="top" constant="4" id="nxR-aB-7xA"/>
-                                                <constraint firstItem="DtV-ze-5g2" firstAttribute="top" secondItem="Rna-Dj-eNk" secondAttribute="top" id="o3l-I2-t5d"/>
                                                 <constraint firstAttribute="bottom" secondItem="Rna-Dj-eNk" secondAttribute="bottom" constant="4" id="v2C-qt-6ec"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellImage" destination="Rna-Dj-eNk" id="BAR-ut-OU4"/>
                                             <outlet property="dateLabel" destination="pDr-Fb-LeT" id="cm1-ho-XxU"/>
-                                            <outlet property="likeButton" destination="DtV-ze-5g2" id="HjW-sn-DDp"/>
+                                            <outlet property="likeButton" destination="GsH-kU-irN" id="dLz-PE-B1H"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -100,7 +104,7 @@
     </scenes>
     <resources>
         <image name="0" width="200" height="132"/>
-        <image name="like_button_on" width="30" height="26"/>
+        <image name="like_button_on" width="29" height="26"/>
         <namedColor name="YP Background">
             <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
