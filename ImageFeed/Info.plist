@@ -6,6 +6,8 @@
 	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF Pro Display-Regular</string>
