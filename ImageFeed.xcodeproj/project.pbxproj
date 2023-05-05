@@ -17,6 +17,7 @@
 		89B1B2FC29C9DC4000C0146F /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B1B2FB29C9DC4000C0146F /* ImagesListViewController.swift */; };
 		89B1B2FF29C9DC4000C0146F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B1B2FD29C9DC4000C0146F /* Main.storyboard */; };
 		89B1B30429C9DC4100C0146F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B1B30229C9DC4100C0146F /* LaunchScreen.storyboard */; };
+		89DEC6FD29EEFA1A0079F66C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEC6FC29EEFA1A0079F66C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		89B1B2FE29C9DC4000C0146F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89B1B30329C9DC4100C0146F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89B1B30529C9DC4100C0146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89DEC6FC29EEFA1A0079F66C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			children = (
 				89B1B2FB29C9DC4000C0146F /* ImagesListViewController.swift */,
 				8947927E29D60A33002BA886 /* ImagesListCell.swift */,
+				89DEC6FC29EEFA1A0079F66C /* ProfileViewController.swift */,
 			);
 			path = ImageList;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DEC6FD29EEFA1A0079F66C /* ProfileViewController.swift in Sources */,
 				89B1B2FC29C9DC4000C0146F /* ImagesListViewController.swift in Sources */,
 				89B1B2F829C9DC4000C0146F /* AppDelegate.swift in Sources */,
 				8947927F29D60A33002BA886 /* ImagesListCell.swift in Sources */,
