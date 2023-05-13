@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Wq-bd-9gL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bwM-Ks-FxZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,6 +17,24 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="iRQ-tC-upl">
+            <objects>
+                <tabBarController id="bwM-Ks-FxZ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PDd-oD-BxB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="CJD-5T-md1"/>
+                        <segue destination="4Wq-bd-9gL" kind="relationship" relationship="viewControllers" id="ExC-NS-a1v"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JTM-vq-x2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2326" y="-80"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="OX2-PL-HRM">
             <objects>
@@ -81,10 +99,11 @@
                             <constraint firstItem="mP3-lp-I14" firstAttribute="leading" secondItem="Alw-t5-sGa" secondAttribute="leading" id="xS1-Zh-5cm"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="tab_profile_active" id="Uz0-eJ-rWW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khp-Dz-UZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591.304347826087" y="-35.491071428571423"/>
+            <point key="canvasLocation" x="-1088" y="256"/>
         </scene>
         <!--ImageList-->
         <scene sceneID="tne-QT-ifu">
@@ -161,13 +180,14 @@
                             <constraint firstItem="BTg-gQ-VnR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gzo-NW-LKm"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="tab_editorial_active" id="ZaH-t8-Xf2"/>
                     <connections>
                         <outlet property="tableView" destination="BTg-gQ-VnR" id="l6B-Uz-dcS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128.98550724637681" y="-34.821428571428569"/>
+            <point key="canvasLocation" x="-1088" y="-394"/>
         </scene>
     </scenes>
     <resources>
@@ -175,6 +195,8 @@
         <image name="Userpick" width="70" height="70"/>
         <image name="like_button_on" width="42" height="42"/>
         <image name="logout_button" width="20" height="22"/>
+        <image name="tab_editorial_active" width="30" height="30"/>
+        <image name="tab_profile_active" width="30" height="30"/>
         <namedColor name="YP Background">
             <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
