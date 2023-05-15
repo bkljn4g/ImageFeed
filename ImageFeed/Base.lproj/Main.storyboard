@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khp-Dz-UZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088" y="256"/>
+            <point key="canvasLocation" x="-1555" y="259"/>
         </scene>
         <!--ImageList-->
         <scene sceneID="tne-QT-ifu">
@@ -163,6 +163,7 @@
                                             <outlet property="cellImage" destination="Rna-Dj-eNk" id="BAR-ut-OU4"/>
                                             <outlet property="dateLabel" destination="pDr-Fb-LeT" id="cm1-ho-XxU"/>
                                             <outlet property="likeButton" destination="GsH-kU-irN" id="dLz-PE-B1H"/>
+                                            <segue destination="9hM-0q-WJf" kind="show" id="suR-Oh-8zX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -188,7 +189,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178.2608695652174" y="-394.41964285714283"/>
+            <point key="canvasLocation" x="-770" y="-394"/>
+        </scene>
+        <!--Single Image View Controller-->
+        <scene sceneID="rOK-7k-7Tv">
+            <objects>
+                <viewController id="9hM-0q-WJf" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9vU-se-lfn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="oSx-7q-RPK" userLabel="Image View">
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fU7-I0-b4N"/>
+                        <color key="backgroundColor" name="YP Black"/>
+                        <constraints>
+                            <constraint firstItem="oSx-7q-RPK" firstAttribute="top" secondItem="fU7-I0-b4N" secondAttribute="top" id="8ES-I2-IQC"/>
+                            <constraint firstItem="fU7-I0-b4N" firstAttribute="trailing" secondItem="oSx-7q-RPK" secondAttribute="trailing" id="E92-b8-nHp"/>
+                            <constraint firstItem="oSx-7q-RPK" firstAttribute="bottom" secondItem="fU7-I0-b4N" secondAttribute="bottom" id="dCV-OP-l1n"/>
+                            <constraint firstItem="oSx-7q-RPK" firstAttribute="leading" secondItem="fU7-I0-b4N" secondAttribute="leading" id="yWM-Ye-l0b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KTe-3f-H85"/>
+                    <connections>
+                        <outlet property="imageView" destination="oSx-7q-RPK" id="sJ8-aU-V7X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4KI-fm-Ecg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.79710144927537" y="-394.41964285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IHt-Ml-7la">
@@ -211,7 +242,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPv-9v-gka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088.4057971014493" y="-394.41964285714283"/>
+            <point key="canvasLocation" x="-1554" y="-394"/>
         </scene>
     </scenes>
     <resources>
