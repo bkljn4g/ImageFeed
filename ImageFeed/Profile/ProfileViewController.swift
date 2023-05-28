@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileViewController {
+final class ProfileViewController: UIViewController {
     @IBOutlet private var avatarImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var loginNameLabel: UILabel!
@@ -16,4 +16,5 @@ final class ProfileViewController {
     
     @IBAction private func didTapLogoutButton() {
     }
+    
 }
