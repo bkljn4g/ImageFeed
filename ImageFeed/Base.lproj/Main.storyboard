@@ -28,8 +28,8 @@
                         <color key="selectedImageTintColor" name="YP White"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4Wq-bd-9gL" kind="relationship" relationship="viewControllers" id="ExC-NS-a1v"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="nIW-BQ-a9d"/>
+                        <segue destination="4Wq-bd-9gL" kind="relationship" relationship="viewControllers" id="ExC-NS-a1v"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTM-vq-x2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,7 +145,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 мая 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDr-Fb-LeT" userLabel="dateLabel">
-                                                    <rect key="frame" x="24" y="196" width="66.5" height="16"/>
+                                                    <rect key="frame" x="24" y="196" width="65" height="16"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                     <color key="textColor" name="YP White"/>
                                                     <nil key="highlightedColor"/>
