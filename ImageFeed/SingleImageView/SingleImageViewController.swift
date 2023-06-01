@@ -45,9 +45,16 @@ final class SingleImageViewController: UIViewController {
         scrollView.setContentOffset(CGPoint(x: x, y: y), animated: false)
     }
     
-    @IBAction func didTapBackButton() {
+    @IBAction private func didTapBackButton() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func didTapShareButton(_ sender: UIButton) {
+        let share = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        present(share, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension SingleImageViewController: UIScrollViewDelegate {
