@@ -54,7 +54,6 @@ final class SingleImageViewController: UIViewController {
         present(share, animated: true, completion: nil)
     }
     
-    
 }
 
 extension SingleImageViewController: UIScrollViewDelegate {
