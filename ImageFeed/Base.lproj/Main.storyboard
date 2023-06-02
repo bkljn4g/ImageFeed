@@ -9,10 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF Pro Display-Bold.ttf">
-            <string>SFProDisplay-Bold</string>
-        </array>
-        <array key="SF Pro Display-Regular.ttf">
+        <array key="SF-Pro-Display-Regular.otf">
             <string>SFProDisplay-Regular</string>
         </array>
     </customFonts>
@@ -43,74 +40,10 @@
                     <view key="view" contentMode="scaleToFill" id="xOa-yW-FqN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Userpick" translatesAutoresizingMaskIntoConstraints="NO" id="Alw-t5-sGa" userLabel="Avatar Image View">
-                                <rect key="frame" x="16" y="80" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="bnB-DT-XXb"/>
-                                    <constraint firstAttribute="height" constant="70" id="wNh-Fo-GiV"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ekaterina_nov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyN-yM-XGu" userLabel="Login Name Label">
-                                <rect key="frame" x="16" y="193.5" width="382" height="16"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
-                                <color key="textColor" name="YP Gray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, world!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS5-NM-CZA" userLabel="Description Label">
-                                <rect key="frame" x="16" y="217.5" width="382" height="16"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
-                                <color key="textColor" name="YP White"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Екатерина Новикова" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP3-lp-I14" userLabel="Name Label">
-                                <rect key="frame" x="16" y="158" width="382" height="27.5"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="23"/>
-                                <color key="textColor" name="YP White"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-cU-r5h" userLabel="Logout Button">
-                                <rect key="frame" x="349.5" y="103" width="48.5" height="36"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="logout_button" title=" "/>
-                                <connections>
-                                    <action selector="didTapLogoutButton" destination="4Wq-bd-9gL" eventType="touchUpInside" id="fpI-ih-WS7"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nog-cJ-yU3"/>
                         <color key="backgroundColor" name="YP Black"/>
-                        <constraints>
-                            <constraint firstItem="DyN-yM-XGu" firstAttribute="trailing" secondItem="mP3-lp-I14" secondAttribute="trailing" id="4nR-0z-Mcl"/>
-                            <constraint firstItem="hS5-NM-CZA" firstAttribute="trailing" secondItem="mP3-lp-I14" secondAttribute="trailing" id="KaR-ma-pZV"/>
-                            <constraint firstItem="mP3-lp-I14" firstAttribute="top" secondItem="Alw-t5-sGa" secondAttribute="bottom" constant="8" id="Lxh-uu-qkf"/>
-                            <constraint firstItem="hS5-NM-CZA" firstAttribute="top" secondItem="DyN-yM-XGu" secondAttribute="bottom" constant="8" id="Vcs-b4-gIl"/>
-                            <constraint firstItem="jpP-cU-r5h" firstAttribute="top" secondItem="nog-cJ-yU3" secondAttribute="top" constant="55" id="Z89-Ar-eaS"/>
-                            <constraint firstItem="nog-cJ-yU3" firstAttribute="trailing" secondItem="mP3-lp-I14" secondAttribute="trailing" constant="16" id="dLi-aS-YxC"/>
-                            <constraint firstItem="DyN-yM-XGu" firstAttribute="leading" secondItem="mP3-lp-I14" secondAttribute="leading" id="doA-o6-VhB"/>
-                            <constraint firstItem="Alw-t5-sGa" firstAttribute="top" secondItem="nog-cJ-yU3" secondAttribute="top" constant="32" id="iLc-fS-C0t"/>
-                            <constraint firstItem="jpP-cU-r5h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Alw-t5-sGa" secondAttribute="trailing" id="lGs-Pe-s4Z"/>
-                            <constraint firstItem="Alw-t5-sGa" firstAttribute="leading" secondItem="nog-cJ-yU3" secondAttribute="leading" constant="16" id="ltA-bH-nNx"/>
-                            <constraint firstItem="DyN-yM-XGu" firstAttribute="top" secondItem="mP3-lp-I14" secondAttribute="bottom" constant="8" id="on1-lr-bm8"/>
-                            <constraint firstItem="hS5-NM-CZA" firstAttribute="leading" secondItem="mP3-lp-I14" secondAttribute="leading" id="pwQ-0P-TK8"/>
-                            <constraint firstItem="nog-cJ-yU3" firstAttribute="trailing" secondItem="jpP-cU-r5h" secondAttribute="trailing" constant="16" id="wP8-7E-w8r"/>
-                            <constraint firstItem="mP3-lp-I14" firstAttribute="leading" secondItem="Alw-t5-sGa" secondAttribute="leading" id="xS1-Zh-5cm"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tab_profile_active" id="Uz0-eJ-rWW"/>
-                    <connections>
-                        <outlet property="avatarImageView" destination="Alw-t5-sGa" id="nPI-aj-Bf5"/>
-                        <outlet property="descriptionLabel" destination="hS5-NM-CZA" id="liF-9V-w1L"/>
-                        <outlet property="loginNameLabel" destination="DyN-yM-XGu" id="UmR-as-ELW"/>
-                        <outlet property="logoutButton" destination="jpP-cU-r5h" id="6r1-li-hci"/>
-                        <outlet property="nameLabel" destination="mP3-lp-I14" id="kdc-ok-P7K"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khp-Dz-UZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,9 +210,7 @@
     </scenes>
     <resources>
         <image name="0" width="200" height="132"/>
-        <image name="Userpick" width="70" height="70"/>
         <image name="like_button_on" width="42" height="42"/>
-        <image name="logout_button" width="20" height="22"/>
         <image name="nav_back_button" width="24" height="24"/>
         <image name="share_button" width="50" height="50"/>
         <image name="tab_editorial_active" width="30" height="30"/>
@@ -289,9 +220,6 @@
         </namedColor>
         <namedColor name="YP Black">
             <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="YP Gray">
-            <color red="0.68199998140335083" green="0.68599998950958252" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="YP White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
