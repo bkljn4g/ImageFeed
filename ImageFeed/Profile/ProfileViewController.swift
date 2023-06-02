@@ -12,7 +12,11 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        let avatarImage = avatarImage()
+        let userName = userName()
+        let nickName = nickName()
+        let profileDescription = profileDescription()
+        let logoutButton = logoutButton()
         
         NSLayoutConstraint.activate([
             avatarImage.heightAnchor.constraint(equalToConstant: 70),
