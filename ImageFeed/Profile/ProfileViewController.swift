@@ -12,11 +12,11 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let avatarImage = avatarImage()
-        let userName = userName()
-        let nickName = nickName()
-        let profileDescription = profileDescription()
-        let logoutButton = logoutButton()
+        let avatarImage = makeAvatarImage()
+        let userName = makeUserName()
+        let nickName = makeNickName()
+        let profileDescription = makeProfileDescription()
+        let logoutButton = makeLogoutButton()
         
         NSLayoutConstraint.activate([
             avatarImage.heightAnchor.constraint(equalToConstant: 70),
@@ -36,7 +36,7 @@ final class ProfileViewController: UIViewController {
         ])
     }
     
-    func avatarImage() -> UIImageView { // добавляем аватарку юзера
+    func makeAvatarImage() -> UIImageView { // добавляем аватарку юзера
         let avatarImage = UIImageView(image: UIImage(named: "avatar_image"))
         view.addSubview(avatarImage)
         avatarImage.translatesAutoresizingMaskIntoConstraints = false
@@ -44,7 +44,7 @@ final class ProfileViewController: UIViewController {
         return avatarImage
     }
     
-    func userName() -> UILabel { // добавляем имя юзера
+    func makeUserName() -> UILabel { // добавляем имя юзера
         let userName = UILabel()
         view.addSubview(userName)
         userName.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +55,7 @@ final class ProfileViewController: UIViewController {
         return userName
     }
     
-    func nickName() -> UILabel { // добавляем никнейм
+    func makeNickName() -> UILabel { // добавляем никнейм
         let nickName = UILabel()
         view.addSubview(nickName)
         nickName.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,7 @@ final class ProfileViewController: UIViewController {
         return nickName
     }
     
-    func profileDescription() -> UILabel { // добавляем описание профиля
+    func makeProfileDescription() -> UILabel { // добавляем описание профиля
         let profileDescription = UILabel()
         view.addSubview(profileDescription)
         profileDescription.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +77,7 @@ final class ProfileViewController: UIViewController {
         return profileDescription
     }
     
-    func logoutButton() -> UIButton { // добавляем кнопку логаута
+    func makeLogoutButton() -> UIButton { // добавляем кнопку логаута
         let logoutButton = UIButton()
         view.addSubview(logoutButton)
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
