@@ -2,7 +2,7 @@
 //  ImagesListCell.swift
 //  ImageFeed
 //
-//  Created by Anka on 30.03.2023.
+//  Created by Ann Goncharova on 30.03.2023.
 //
 
 import UIKit

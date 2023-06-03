@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  ImageFeed
 //
-//  Created by Anka on 21.03.2023.
+//  Created by Ann Goncharova on 21.03.2023.
 //
 
 import UIKit
