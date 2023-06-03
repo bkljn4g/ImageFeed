@@ -6,10 +6,12 @@
 	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SF Display-Regular</string>
-		<string>SF Display-Bold</string>
+		<string>SF Pro Display-Regular</string>
+		<string>SF Pro Display-Bold</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
