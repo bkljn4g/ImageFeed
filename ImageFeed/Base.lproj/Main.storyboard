@@ -79,13 +79,46 @@
                     <view key="view" contentMode="scaleToFill" id="0ft-Gg-1Ji">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Uc-3N-uQI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="YP White"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xu-d9-q47" userLabel="Back Button">
+                                <rect key="frame" x="20" y="20" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="7FY-a8-DJI"/>
+                                    <constraint firstAttribute="width" constant="24" id="eww-3j-ikI"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="nav_back_button(black)"/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="MoZ-wq-l2s" eventType="touchUpInside" id="Klh-iF-rPs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Vao-Mz-gBM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Uc-3N-uQI" firstAttribute="top" secondItem="Vao-Mz-gBM" secondAttribute="top" id="46t-d6-u7z"/>
+                            <constraint firstItem="2Uc-3N-uQI" firstAttribute="leading" secondItem="Vao-Mz-gBM" secondAttribute="leading" id="RpS-MI-8CX"/>
+                            <constraint firstItem="5xu-d9-q47" firstAttribute="leading" secondItem="Vao-Mz-gBM" secondAttribute="leading" constant="20" id="YdK-rv-nMm"/>
+                            <constraint firstItem="Vao-Mz-gBM" firstAttribute="bottom" secondItem="2Uc-3N-uQI" secondAttribute="bottom" id="bnr-ut-U5H"/>
+                            <constraint firstItem="Vao-Mz-gBM" firstAttribute="trailing" secondItem="2Uc-3N-uQI" secondAttribute="trailing" id="j7S-as-9dL"/>
+                            <constraint firstItem="5xu-d9-q47" firstAttribute="top" secondItem="Vao-Mz-gBM" secondAttribute="top" constant="20" id="xUC-iC-EW9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="2Uc-3N-uQI" id="aIS-9B-xgG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTX-gi-rH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-368" y="-1244"/>
+            <point key="canvasLocation" x="-368.11594202898556" y="-1244.1964285714284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iRQ-tC-upl">
@@ -304,6 +337,7 @@
         <image name="like_button_on" width="42" height="42"/>
         <image name="logo_of_Unsplash" width="60" height="60"/>
         <image name="nav_back_button" width="24" height="24"/>
+        <image name="nav_back_button(black)" width="24" height="24"/>
         <image name="share_button" width="50" height="50"/>
         <image name="tab_editorial_active" width="30" height="30"/>
         <image name="tab_profile_active" width="30" height="30"/>
