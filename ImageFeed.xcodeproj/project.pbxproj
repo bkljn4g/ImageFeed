@@ -19,6 +19,8 @@
 		89B1B2FF29C9DC4000C0146F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B1B2FD29C9DC4000C0146F /* Main.storyboard */; };
 		89B1B30429C9DC4100C0146F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B1B30229C9DC4100C0146F /* LaunchScreen.storyboard */; };
 		89D4FDAF2A2BFD41006A76F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D4FDAE2A2BFD41006A76F5 /* Constants.swift */; };
+		89D4FDB22A2D0F56006A76F5 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D4FDB12A2D0F56006A76F5 /* AuthViewController.swift */; };
+		89D4FDB42A2D0FFC006A76F5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D4FDB32A2D0FFB006A76F5 /* WebViewController.swift */; };
 		89DEC6FD29EEFA1A0079F66C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEC6FC29EEFA1A0079F66C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		89B1B30329C9DC4100C0146F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89B1B30529C9DC4100C0146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89D4FDAE2A2BFD41006A76F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89D4FDB12A2D0F56006A76F5 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		89D4FDB32A2D0FFB006A76F5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		89DEC6FC29EEFA1A0079F66C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,7 @@
 				89D4FDAE2A2BFD41006A76F5 /* Constants.swift */,
 				89B1B2FD29C9DC4000C0146F /* Main.storyboard */,
 				89B1B30529C9DC4100C0146F /* Info.plist */,
+				89D4FDB02A2D0F2C006A76F5 /* Auth */,
 				8914B55A2A1032B300DA370C /* Profile */,
 				8914B5592A10265300DA370C /* SingleImageView */,
 				8947928029D60A6B002BA886 /* ImageList */,
@@ -126,6 +131,15 @@
 				8959A61829D4C7EC000EF543 /* Resources */,
 			);
 			path = ImageFeed;
+			sourceTree = "<group>";
+		};
+		89D4FDB02A2D0F2C006A76F5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				89D4FDB12A2D0F56006A76F5 /* AuthViewController.swift */,
+				89D4FDB32A2D0FFB006A76F5 /* WebViewController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,10 +218,12 @@
 				89DEC6FD29EEFA1A0079F66C /* ProfileViewController.swift in Sources */,
 				89B1B2FC29C9DC4000C0146F /* ImagesListViewController.swift in Sources */,
 				89B1B2F829C9DC4000C0146F /* AppDelegate.swift in Sources */,
+				89D4FDB42A2D0FFC006A76F5 /* WebViewController.swift in Sources */,
 				8914B5582A1024FB00DA370C /* SingleImageViewController.swift in Sources */,
 				8947927F29D60A33002BA886 /* ImagesListCell.swift in Sources */,
 				89B1B2FA29C9DC4000C0146F /* SceneDelegate.swift in Sources */,
 				8959A61E29D4CE82000EF543 /* UIColor+Extensions.swift in Sources */,
+				89D4FDB22A2D0F56006A76F5 /* AuthViewController.swift in Sources */,
 				89D4FDAF2A2BFD41006A76F5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
