@@ -5,15 +5,17 @@
 //  Created by Ann Goncharova on 07.06.2023.
 //
 
-import UIKit
+import Foundation
 
 final class OAuth2TokenStorage {
+    private let userDefaults = UserDefaults.standard
     var token: String? {
         get {
-            return UserDefaults.standard.string(forKey: OAuthTokenResponseBody.CodingKeys.accessToken.rawValue)
+         let token = userDefaults.string(forKey: "token")
+            return token
         }
-        set {
-            UserDefaults.standard.set(newValue, forKey: OAuthTokenResponseBody.CodingKeys.accessToken.rawValue)
+        set{
+            userDefaults.set(newValue, forKey: "token")
         }
     }
 }
