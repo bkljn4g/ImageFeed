@@ -2,7 +2,7 @@
 //  OAuthTokenResponseBody.swift
 //  ImageFeed
 //
-//  Created by Anka on 07.06.2023.
+//  Created by Ann Goncharova on 07.06.2023.
 //
 
 import Foundation
