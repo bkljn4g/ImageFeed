@@ -48,7 +48,7 @@ final class ProfileViewController: UIViewController {
         let userName = UILabel()
         view.addSubview(userName)
         userName.translatesAutoresizingMaskIntoConstraints = false
-        userName.text = "Екатерина Новикова"
+        userName.text = "Ann Goncharova"
         userName.font = UIFont.systemFont(ofSize: 23, weight: .bold)
         userName.textColor = .ypWhite
         
@@ -59,7 +59,7 @@ final class ProfileViewController: UIViewController {
         let nickName = UILabel()
         view.addSubview(nickName)
         nickName.translatesAutoresizingMaskIntoConstraints = false
-        nickName.text = "@ekaterina_nov"
+        nickName.text = "@goncharova_ann"
         nickName.textColor = .ypGray
         nickName.font = UIFont.systemFont(ofSize: 13)
         
@@ -77,12 +77,13 @@ final class ProfileViewController: UIViewController {
         return profileDescription
     }
     
+    
     func makeLogoutButton() -> UIButton { // добавляем кнопку логаута
         let logoutButton = UIButton()
         view.addSubview(logoutButton)
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         logoutButton.setImage(UIImage(named: "logout_button"), for: .normal)
-        
+
         return logoutButton
     }
 }
