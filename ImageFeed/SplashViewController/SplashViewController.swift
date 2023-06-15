@@ -64,6 +64,7 @@ extension SplashViewController: AuthViewControllerDelegate {
             guard let self = self else { return }
             self.fetchOAuthToken(code)
         }
+        UIBlockingProgressHUD.show()
     }
     
     private func fetchOAuthToken(_ code: String) {
@@ -77,6 +78,7 @@ extension SplashViewController: AuthViewControllerDelegate {
                     // TODO показать ошибку
                     break
             }
+            UIBlockingProgressHUD.dismiss()
         }
     }
 }

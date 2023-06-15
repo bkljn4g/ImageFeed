@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8914B5582A1024FB00DA370C /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8914B5572A1024FB00DA370C /* SingleImageViewController.swift */; };
 		8937C3002A3917BB0058D3AC /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8937C2FF2A3917BB0058D3AC /* ProgressHUD */; };
+		8937C3022A3AA84C0058D3AC /* UIBlockingProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8937C3012A3AA84C0058D3AC /* UIBlockingProgressHUD.swift */; };
 		893805862A35F87A002FB727 /* OAuthTokenResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893805852A35F87A002FB727 /* OAuthTokenResponseBody.swift */; };
 		8947927F29D60A33002BA886 /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947927E29D60A33002BA886 /* ImagesListCell.swift */; };
 		8959A61B29D4CCB7000EF543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8959A61A29D4CCB7000EF543 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		8914B5572A1024FB00DA370C /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
+		8937C3012A3AA84C0058D3AC /* UIBlockingProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlockingProgressHUD.swift; sourceTree = "<group>"; };
 		893805852A35F87A002FB727 /* OAuthTokenResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthTokenResponseBody.swift; sourceTree = "<group>"; };
 		8947927E29D60A33002BA886 /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 		8959A61A29D4CCB7000EF543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		89E4BD252A3253D3009746EC /* SplashViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8937C3012A3AA84C0058D3AC /* UIBlockingProgressHUD.swift */,
 				89E4BD232A325306009746EC /* SplashViewController.swift */,
 			);
 			path = SplashViewController;
@@ -259,6 +262,7 @@
 				8998883C2A30BC6D007AF7A7 /* OAuth2Service.swift in Sources */,
 				89E4BD242A325306009746EC /* SplashViewController.swift in Sources */,
 				8914B5582A1024FB00DA370C /* SingleImageViewController.swift in Sources */,
+				8937C3022A3AA84C0058D3AC /* UIBlockingProgressHUD.swift in Sources */,
 				8947927F29D60A33002BA886 /* ImagesListCell.swift in Sources */,
 				89B1B2FA29C9DC4000C0146F /* SceneDelegate.swift in Sources */,
 				893805862A35F87A002FB727 /* OAuthTokenResponseBody.swift in Sources */,
