@@ -8,9 +8,10 @@
 import UIKit
 
 final class OAuth2Service {
-    
     static let shared = OAuth2Service()
     private let urlSession = URLSession.shared
+    private var task: URLSessionTask?
+    private var lastCode: String?
     
     private (set) var authToken: String? {
         get {
@@ -21,7 +22,11 @@ final class OAuth2Service {
         }
     }
     
-    func fetchOAuthToken(_ code: String, completion: @escaping (Result<String, Error>) -> Void ) {
+    func fetchOAuthToken(_ code: String, completion: @escaping (Result<String, Error>) -> Void ) { // запрос на получение токена аутентификации
+        assert(Thread.isMainThread) // проверяем, вызывается ли метод из главного потока
+        if lastCode == code { return }
+        task?.cancel()
+        lastCode = code
         let request = authTokenRequest(code: code)
         let task = object(for: request) {[weak self] result in
             guard let self = self else { return }
@@ -36,6 +41,13 @@ final class OAuth2Service {
         }
         task.resume()
     }
+    
+    private func makeRequest(code: String) -> URLRequest { // создаем POST запрос
+        guard let url = URL(string: "defaultBaseURL\(code)") else { fatalError("Failed to create URL") }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        return request
+    }
 }
 
 extension OAuth2Service {
@@ -48,9 +60,8 @@ extension OAuth2Service {
             completion(response)
         }
     }
-}
     
-    private func authTokenRequest(code: String) -> URLRequest {
+    private func authTokenRequest(code: String) -> URLRequest { // func создает и возвращает URL запрос для получения авторизационного токена
         URLRequest.makeHTTPRequest(
             path: "/oauth/token"
             + "?client_id=\(AccessKey)"
@@ -62,7 +73,8 @@ extension OAuth2Service {
             baseURL: URL(string: "https://unsplash.com")!
         )
     }
-
+}
+    
 extension URLRequest {
     static func makeHTTPRequest(path: String, httpMethod: String, baseURL: URL = DefaultBaseURL) -> URLRequest {
         var request = URLRequest(url: URL(string: path, relativeTo: baseURL)!)
