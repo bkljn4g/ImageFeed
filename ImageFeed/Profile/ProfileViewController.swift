@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ProfileViewController: UIViewController {
 
+    private let profileService = ProfileService.shared
+    private var profileImageServiceObserver: NSObjectProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,11 +83,36 @@ final class ProfileViewController: UIViewController {
     
     
     func makeLogoutButton() -> UIButton { // добавляем кнопку логаута
-        let logoutButton = UIButton()
+        let logoutButton = UIButton.systemButton(with: UIImage(named: "logout_button") ?? UIImage(), target: self, action: nil)
         view.addSubview(logoutButton)
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
-        logoutButton.setImage(UIImage(named: "logout_button"), for: .normal)
+        //logoutButton.setImage(UIImage(named: "logout_button"), for: .normal)
+        logoutButton.tintColor = .ypRed
 
         return logoutButton
+    }
+    
+    private func updateAvatar() {
+        guard
+            let profileImageURL = ProfileImageService.shared.avatarURL,
+            let url = URL(string: profileImageURL)
+        else { return }
+        let processor = RoundCornerImageProcessor(cornerRadius: 61)
+        makeAvatarImage().kf.indicatorType = .activity
+        makeAvatarImage().kf.setImage(with: url,
+                                 placeholder: UIImage(named: "person.crop.circle.fill.png"),
+                                 options: [.processor(processor),.cacheSerializer(FormatIndicatedCacheSerializer.png)])
+        let cache = ImageCache.default
+        cache.clearDiskCache()
+        cache.clearMemoryCache()
+    }
+}
+
+extension ProfileViewController {
+    private func updateProfileDetails(profile: Profile?) {
+        guard let profile = profileService.profile else { return }
+        makeUserName().text = profile.name
+        makeNickName().text = profile.loginName
+        makeProfileDescription().text = profile.bio
     }
 }

@@ -94,10 +94,10 @@ private extension WebViewViewController { // экстеншн для загру�
     func loadWebView() { // функция передана во вьюдидлоад, переопределение
         var urlComponents = URLComponents(string: unsplashAuthorizeURLString)! //инициализация структуры URLComponents с указанием адреса запроса
         urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: AccessKey), // установка значения client_id - код доступа приложения
-            URLQueryItem(name: "redirect_uri", value: RedirectURI), // URI, который обрабатывает успешную авторизацию пользователя
+            URLQueryItem(name: "client_id", value: Constants.accessKey), // установка значения client_id - код доступа приложения
+            URLQueryItem(name: "redirect_uri", value: Constants.redirectURI), // URI, который обрабатывает успешную авторизацию пользователя
             URLQueryItem(name: "response_type", value: "code"), // тип ответа: код
-            URLQueryItem(name: "scope", value: AccessScope) // область запроса
+            URLQueryItem(name: "scope", value: Constants.accessScope) // область запроса
         ]
         
         guard let url = urlComponents.url else { return print ("no answer from URL")}

@@ -9,16 +9,16 @@ import UIKit
 import ProgressHUD
 
 final class UIBlockingProgressHUD {
-    private static var window: UIWindow? {
-        return UIApplication.shared.windows.first
+    private static var window: UIWindow? { // вычисляемое свойство, возвращает из массива апки первое окно
+        return UIApplication.shared.windows.first // синглтон объекта текущего приложения
     }
     
-    static func show() {
+    static func show() { // используется для отображения индикатора загрузки и блокировки UI
         window?.isUserInteractionEnabled = false
         ProgressHUD.show()
     }
     
-    static func dismiss() {
+    static func dismiss() { // используется для скрытия индикатора загрузки и разблокировки UI
         window?.isUserInteractionEnabled = true
         ProgressHUD.dismiss()
     }
