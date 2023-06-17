@@ -22,6 +22,8 @@
 		897F91532A3DF2A500662E02 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F91522A3DF2A500662E02 /* URLSession.swift */; };
 		897F91562A3DF60E00662E02 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 897F91552A3DF60E00662E02 /* Kingfisher */; };
 		897F91592A3E141400662E02 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 897F91582A3E141400662E02 /* SwiftKeychainWrapper */; };
+		897F915B2A3E412200662E02 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F915A2A3E412200662E02 /* TabBarController.swift */; };
+		897F915D2A3E609200662E02 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897F915C2A3E609200662E02 /* AlertModel.swift */; };
 		8998883C2A30BC6D007AF7A7 /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8998883B2A30BC6D007AF7A7 /* OAuth2Service.swift */; };
 		8998883E2A30BF74007AF7A7 /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8998883D2A30BF74007AF7A7 /* OAuth2TokenStorage.swift */; };
 		89B1B2F829C9DC4000C0146F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B1B2F729C9DC4000C0146F /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		8973781429DB25EC0041B731 /* SF Pro Display-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Pro Display-Regular.ttf"; sourceTree = "<group>"; };
 		897F91502A3DF12C00662E02 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		897F91522A3DF2A500662E02 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		897F915A2A3E412200662E02 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		897F915C2A3E609200662E02 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		8998883B2A30BC6D007AF7A7 /* OAuth2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Service.swift; sourceTree = "<group>"; };
 		8998883D2A30BF74007AF7A7 /* OAuth2TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2TokenStorage.swift; sourceTree = "<group>"; };
 		89B1B2F429C9DC4000C0146F /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +161,8 @@
 		89B1B2F629C9DC4000C0146F /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				897F915C2A3E609200662E02 /* AlertModel.swift */,
+				897F915A2A3E412200662E02 /* TabBarController.swift */,
 				89B1B2F729C9DC4000C0146F /* AppDelegate.swift */,
 				89B1B2F929C9DC4000C0146F /* SceneDelegate.swift */,
 				89B1B2FD29C9DC4000C0146F /* Main.storyboard */,
@@ -278,6 +284,7 @@
 				8937C3042A3AACD20058D3AC /* ProfileService.swift in Sources */,
 				89DEC6FD29EEFA1A0079F66C /* ProfileViewController.swift in Sources */,
 				89B1B2FC29C9DC4000C0146F /* ImagesListViewController.swift in Sources */,
+				897F915D2A3E609200662E02 /* AlertModel.swift in Sources */,
 				89B1B2F829C9DC4000C0146F /* AppDelegate.swift in Sources */,
 				897F91512A3DF12C00662E02 /* AlertPresenter.swift in Sources */,
 				89D4FDB42A2D0FFC006A76F5 /* WebViewController.swift in Sources */,
@@ -287,6 +294,7 @@
 				897F91532A3DF2A500662E02 /* URLSession.swift in Sources */,
 				8914B5582A1024FB00DA370C /* SingleImageViewController.swift in Sources */,
 				8937C3022A3AA84C0058D3AC /* UIBlockingProgressHUD.swift in Sources */,
+				897F915B2A3E412200662E02 /* TabBarController.swift in Sources */,
 				8947927F29D60A33002BA886 /* ImagesListCell.swift in Sources */,
 				89B1B2FA29C9DC4000C0146F /* SceneDelegate.swift in Sources */,
 				893805862A35F87A002FB727 /* OAuthTokenResponseBody.swift in Sources */,

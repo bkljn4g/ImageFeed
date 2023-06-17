@@ -23,10 +23,3 @@ final class AlertPresenter {
         vc.present(alert, animated: true)
     }
 }
-
-struct AlertModel {
-    let title: String
-    let message: String
-    let buttonText: String
-    let completion: ((UIAlertAction) -> ())?
-}

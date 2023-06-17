@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 final class ProfileViewController: UIViewController {
-
+    
     private let profileService = ProfileService.shared
     private var profileImageServiceObserver: NSObjectProtocol?
     
@@ -88,31 +88,30 @@ final class ProfileViewController: UIViewController {
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         //logoutButton.setImage(UIImage(named: "logout_button"), for: .normal)
         logoutButton.tintColor = .ypRed
-
+        
         return logoutButton
     }
     
     private func updateAvatar() {
+        view.backgroundColor = .ypBlack
         guard
             let profileImageURL = ProfileImageService.shared.avatarURL,
             let url = URL(string: profileImageURL)
         else { return }
-        let processor = RoundCornerImageProcessor(cornerRadius: 61)
+        let processor = RoundCornerImageProcessor(cornerRadius: 35, backgroundColor: .clear)
         makeAvatarImage().kf.indicatorType = .activity
-        makeAvatarImage().kf.setImage(with: url,
-                                 placeholder: UIImage(named: "person.crop.circle.fill.png"),
-                                 options: [.processor(processor),.cacheSerializer(FormatIndicatedCacheSerializer.png)])
+        makeAvatarImage().kf.setImage(with: url, placeholder: UIImage(named: "avatar_image"), options: [.processor(processor), .cacheSerializer(FormatIndicatedCacheSerializer.png)])
         let cache = ImageCache.default
         cache.clearDiskCache()
         cache.clearMemoryCache()
     }
-}
-
-extension ProfileViewController {
-    private func updateProfileDetails(profile: Profile?) {
-        guard let profile = profileService.profile else { return }
-        makeUserName().text = profile.name
-        makeNickName().text = profile.loginName
-        makeProfileDescription().text = profile.bio
+    
+    
+    private func updateProfileDetails() {
+        makeUserName().text = profileService.profile?.name
+        makeNickName().text = profileService.profile?.loginName
+        makeProfileDescription().text = profileService.profile?.bio
+        
     }
 }
+
