@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="-2326" y="-408"/>
         </scene>
-        <!--ImageList-->
+        <!--Images List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ImagesListViewController" title="ImageList" id="BYZ-38-t0r" customClass="ImagesListViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagesListViewController" id="BYZ-38-t0r" customClass="ImagesListViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,7 +220,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tab_editorial_active" id="b51-Jx-YCn"/>
                     <navigationItem key="navigationItem" id="XGJ-0e-eeG"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="BTg-gQ-VnR" id="l6B-Uz-dcS"/>
                         <segue destination="9hM-0q-WJf" kind="presentation" identifier="ShowSingleImage" modalPresentationStyle="fullScreen" id="NU6-66-Wka"/>

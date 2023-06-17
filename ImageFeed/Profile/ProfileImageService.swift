@@ -9,16 +9,16 @@ import UIKit
 
 final class ProfileImageService {
     static let shared = ProfileImageService()
-    private let oauth2TokenStorage = OAuth2TokenStorage()
+    static let didChangeNotification = Notification.Name("ProfileImageProviderDidChange")
     private (set) var avatarURL: String?
     private let urlSession = URLSession.shared
     private var task: URLSessionTask?
-    static let didChangeNotification = Notification.Name("ProfileImageProviderDidChange")
-
-func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void) {
+    private let storageToken = OAuth2TokenStorage()
+    
+    func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void) {
         assert(Thread.isMainThread)
         
-        let request = makeRequest(token: oauth2TokenStorage.token!, username: username)
+        let request = makeRequest(token: storageToken.token!, username: username)
         let session = URLSession.shared
         let task = session.objectTask(for: request) { [weak self] (result: Result<UserResult, Error>) in
             guard let self = self else { return }
@@ -48,12 +48,11 @@ func fetchProfileImageURL(username: String, _ completion: @escaping (Result<Stri
     }
 }
 
-// MARK: - Structs
 struct UserResult: Codable {
     let profileImage: [String:String]
     
     enum CodingKeys: String, CodingKey {
-        case profileImage = "avatar_image"
+        case profileImage = "profile_image"
     }
 }
 

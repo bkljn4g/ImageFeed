@@ -16,10 +16,10 @@ final class OAuth2Service {
     
     private (set) var authToken: String? {
         get {
-            return OAuth2TokenStorage().token
+            return oauth2TokenStorage.token
         }
         set {
-            OAuth2TokenStorage().token = newValue
+            oauth2TokenStorage.token = newValue
         }
     }
     
@@ -32,17 +32,17 @@ final class OAuth2Service {
         let session = urlSession
         let task = session.objectTask(for: request) { [weak self] (result: Result<OAuthTokenResponseBody, Error>) in
             switch result {
-            case .success(let decodedObject):
-                completion(.success(decodedObject.accessToken))
-                self?.task = nil
-            case .failure(let error):
-                completion(.failure(error))
+                case .success(let decodedObject):
+                    completion(.success(decodedObject.accessToken))
+                    self?.task = nil
+                case .failure(let error):
+                    completion(.failure(error))
             }
         }
+        self.task = task
         task.resume()
     }
-}
-
+    
     private func authTokenRequest(code: String) -> URLRequest { // func создает и возвращает URL запрос для получения авторизационного токена
         URLRequest.makeHTTPRequest(
             path: "/oauth/token"
@@ -53,8 +53,22 @@ final class OAuth2Service {
             + "&&grant_type=authorization_code",
             httpMethod: "POST",
             baseURL: URL(string: "https://unsplash.com")!
-        )
+        ) }
+    
+    private struct OAuthTokenResponseBody: Decodable {
+        let accessToken: String
+        let tokenType: String
+        let scope: String
+        let createdAt: Int
+        
+    enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
+        case tokenType = "token_type"
+        case scope
+        case createdAt = "created_at"
+        }
     }
+}
     
 extension URLRequest {
     static func makeHTTPRequest(path: String, httpMethod: String, baseURL: URL = Constants.defaultBaseURL) -> URLRequest {
