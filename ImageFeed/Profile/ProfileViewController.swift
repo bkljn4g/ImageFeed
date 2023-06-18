@@ -53,7 +53,7 @@ final class ProfileViewController: UIViewController {
         someTextLabel.text = "11 sprint...must die"
         someTextLabel.font = .systemFont(ofSize: 13)
         someTextLabel.textColor = .ypWhite
-        exitButton.setImage(UIImage(named: "ipad.and.arrow.forward"), for: .normal)
+        exitButton.setImage(UIImage(named: "logout_button"), for: .normal)
         exitButton.tintColor = .ypRed
         
     }
