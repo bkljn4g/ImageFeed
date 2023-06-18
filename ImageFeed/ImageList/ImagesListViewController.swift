@@ -79,6 +79,6 @@ extension ImagesListViewController: UITableViewDataSource {
         }
         cell.cellImage.image = image
         cell.dateLabel.text = dateFormatter.string(from: Date())
-        indexPath.row % 2 == 0 ? cell.likeButton.setImage(UIImage(named: "Active"), for: .normal) : cell.likeButton.setImage(UIImage(named:"No Active"), for: .normal)
+        indexPath.row % 2 == 0 ? cell.likeButton.setImage(UIImage(named: "like_button_on"), for: .normal) : cell.likeButton.setImage(UIImage(named:"like_button_off"), for: .normal)
         }
     }

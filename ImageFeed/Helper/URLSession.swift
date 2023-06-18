@@ -5,9 +5,9 @@
 //  Created by Ann Goncharova on 17.06.2023.
 //
 
-import Foundation
+import UIKit
 
-private enum Network: Error {
+private enum NTW: Error {
     case codeError
 }
 
@@ -21,7 +21,7 @@ extension URLSession {
                 }
                 if let response = response as? HTTPURLResponse,
                    !(200...299).contains(response.statusCode) {
-                    completion(.failure(Network.codeError))
+                    completion(.failure(NTW.codeError))
                     return
                 }
                 if let data = data {

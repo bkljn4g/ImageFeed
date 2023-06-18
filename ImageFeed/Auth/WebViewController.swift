@@ -15,16 +15,18 @@ protocol WebViewViewControllerDelegate: AnyObject {
 }
 
 final class WebViewViewController: UIViewController {
-    @IBOutlet private var webView: WKWebView!
     
-    fileprivate let unsplashAuthorizeURLString = "https://unsplash.com/oauth/authorize"
+    @IBOutlet weak private var progressView: UIProgressView!
+    @IBOutlet weak private var webView: WKWebView!
+    
+    fileprivate let UnsplashAuthorizeURLString = "https://unsplash.com/oauth/authorize"
     
     weak var delegate: WebViewViewControllerDelegate?
     private var estimatedProgressObservation: NSKeyValueObservation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        webView.navigationDelegate = self
         estimatedProgressObservation = webView.observe(
                              \.estimatedProgress,
                               options: [],
@@ -33,7 +35,7 @@ final class WebViewViewController: UIViewController {
                                   self.updateProgress()
                               })
         
-        var urlComponents = URLComponents(string: unsplashAuthorizeURLString)!
+        var urlComponents = URLComponents(string: UnsplashAuthorizeURLString)!
         urlComponents.queryItems = [
             URLQueryItem(name: "client_id", value: Constants.accessKey),
             URLQueryItem(name: "redirect_uri", value: Constants.redirectURI),
@@ -45,10 +47,15 @@ final class WebViewViewController: UIViewController {
         webView.load(request)
     }
     
+
+        
+    
     private func updateProgress() {
         progressView.progress = Float(webView.estimatedProgress)
         progressView.isHidden = fabs(webView.estimatedProgress - 1.0) <= 0.0001
     }
+    
+    
     
     private func code(from navigationAction: WKNavigationAction) -> String? {
         if
@@ -63,12 +70,10 @@ final class WebViewViewController: UIViewController {
             return nil
         }
     }
-
-    @IBAction private func didTapBackButton(_ sender: Any?) {
+    
+    @IBAction private func didTapBackButton(_ sender: UIButton) {
         delegate?.webViewViewControllerDidCancel(_vc: self)
     }
-    
-    @IBOutlet weak private var progressView: UIProgressView!
 }
 
 extension WebViewViewController: WKNavigationDelegate {

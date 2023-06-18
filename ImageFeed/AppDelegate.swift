@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let sceneConfiguration = UISceneConfiguration(name: "Main", sessionRole: connectingSceneSession.role) // создаем новую конфигурацию, и задаем ей имя "Main" (вместо него можно указать любое. нужно чтобы различать конфигурации).
             sceneConfiguration.delegateClass = SceneDelegate.self // выставляем delegateClass равным классу уже существующего делегата SceneDelegate
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        return sceneConfiguration
     }
     
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
