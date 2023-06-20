@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import WebKit
 
 final class ProfileViewController: UIViewController {
     
@@ -14,9 +15,13 @@ final class ProfileViewController: UIViewController {
     private let surnameLabel = UILabel()
     private let emailLabel = UILabel()
     private let someTextLabel = UILabel()
-    private let exitButton = UIButton()
+    private lazy var exitButton: UIButton = {
+        let exitButton = UIButton.systemButton(with: UIImage(named: "logout_button")!, target: self, action: #selector(self.didTapButton))
+        return exitButton
+    }()
     private let profileService = ProfileService.shared
     private var profileImageServiceObserver: NSObjectProtocol?
+    private let storageToken = OAuth2TokenStorage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +99,41 @@ final class ProfileViewController: UIViewController {
         let cache = ImageCache.default
         cache.clearDiskCache()
         cache.clearMemoryCache()
+    }
+    
+    @objc
+    private func didTapButton() {
+        showLogoutAlert()
+    }
+    
+    private func logout() {
+        storageToken.clearToken()
+        WebViewViewController.clean()
+        cleanServicesData()
+        tabBarController?.dismiss(animated: true)
+        guard let window = UIApplication.shared.windows.first else {
+            fatalError("Invalid Configuration") }
+        window.rootViewController = SplashViewController()
+    }
+    
+    private func showLogoutAlert() {
+        let alert = UIAlertController(
+            title: "Bye!",
+            message: "Are you shure you want to continue?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] action in
+            guard let self = self else { return }
+            self.logout()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func cleanServicesData() {
+        ImagesListService.shared.clean()
+        ProfileService.shared.clean()
+        ProfileImageService.shared.clean()
     }
 }
 

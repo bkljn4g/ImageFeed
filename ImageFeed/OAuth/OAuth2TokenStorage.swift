@@ -25,4 +25,8 @@ final class OAuth2TokenStorage { // интерфейс для сохранени
             }
         }
     }
+    
+    func clearToken() {
+        keychain.removeAllKeys()
+    }
 }
