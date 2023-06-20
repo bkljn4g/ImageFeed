@@ -118,7 +118,7 @@ final class ProfileViewController: UIViewController {
     
     private func showLogoutAlert() {
         let alert = UIAlertController(
-            title: "Bye!",
+            title: "Bye, Bye!",
             message: "Are you shure you want to continue?",
             preferredStyle: .alert
         )
