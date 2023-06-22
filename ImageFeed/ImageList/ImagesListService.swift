@@ -57,7 +57,7 @@ final class ImagesListService {
     private var lastLoadedPage: Int?
     private let perPage = "10"
     private var task: URLSessionTask?
-    static let didChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
+    static let DidChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
     static let shared = ImagesListService()
     private let storageToken = OAuth2TokenStorage()
     private let dateFormatter = ISO8601DateFormatter()
@@ -82,7 +82,7 @@ final class ImagesListService {
                     self.lastLoadedPage = page
                     NotificationCenter.default
                         .post(
-                            name: ImagesListService.didChangeNotification,
+                            name: ImagesListService.DidChangeNotification,
                             object: self,
                             userInfo: ["Images" : self.photos])
                 case .failure(_):
@@ -174,7 +174,7 @@ final class ImagesListService {
         var requestPost = URLRequest.makeHTTPRequest(
             path: "photos/\(photoId)/like",
             httpMethod: "POST",
-            baseURL: URL(string: "\(Constants.defaultBaseURL)")!)
+            baseURL: URL(string: "\(Constants.defaultBaseURl)")!)
         requestPost.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return requestPost
     }
@@ -188,7 +188,7 @@ final class ImagesListService {
         var requestDelete = URLRequest.makeHTTPRequest(
             path: "photos/\(photoId)/like",
             httpMethod: "DELETE",
-            baseURL: URL(string: "\(Constants.defaultBaseURL)")!)
+            baseURL: URL(string: "\(Constants.defaultBaseURl)")!)
         requestDelete.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return requestDelete
     }

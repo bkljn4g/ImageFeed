@@ -33,7 +33,7 @@ final class ImagesListViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         imagesListServiceObserver = NotificationCenter.default.addObserver(
-            forName: ImagesListService.didChangeNotification,
+            forName: ImagesListService.DidChangeNotification,
             object: nil,
             queue: .main) { [weak self] _ in
                 guard let self = self else { return }
@@ -44,7 +44,7 @@ final class ImagesListViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: ImagesListService.didChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: ImagesListService.DidChangeNotification, object: nil)
     }
     
     private func updateTableViewAnimated() {

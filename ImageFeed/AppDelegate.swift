@@ -15,20 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ProgressHUD.animationType = .systemActivityIndicator
         ProgressHUD.colorHUD = .black
         ProgressHUD.colorAnimation = .lightGray
-        // Override point for customization after application launch.
         return true
     }
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        let sceneConfiguration = UISceneConfiguration(name: "Main", sessionRole: connectingSceneSession.role) // создаем новую конфигурацию, и задаем ей имя "Main" (вместо него можно указать любое. нужно чтобы различать конфигурации).
-            sceneConfiguration.delegateClass = SceneDelegate.self // выставляем delegateClass равным классу уже существующего делегата SceneDelegate
+        let sceneConfiguration = UISceneConfiguration(name: "Main", sessionRole: connectingSceneSession.role)
+            sceneConfiguration.delegateClass = SceneDelegate.self
         return sceneConfiguration
     }
     
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+
     }
 }
 
