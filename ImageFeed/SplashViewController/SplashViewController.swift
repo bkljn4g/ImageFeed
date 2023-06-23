@@ -86,7 +86,7 @@ extension SplashViewController: AuthViewControllerDelegate {
                 self.oauth2TokenStorage.token = token
                 self.fetchProfile(token: token)
             case .failure:
-                alertPresenter.showAlert(in: self, with: AlertModel(
+                    self.alertPresenter.showAlert(in: self, with: AlertModel(
                     title: "Что-то пошло не так",
                     message: "Не удалось войти в систему",
                     buttonText: "OK", completion: nil),

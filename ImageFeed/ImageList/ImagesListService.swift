@@ -159,7 +159,7 @@ final class ImagesListService {
                         largeImageURL: photo.largeImageURL,
                         isLiked: isLiked
                     )
-                    self.photos = withReplaced(itemAt: index, newValue: newPhoto)
+                    self.photos = self.withReplaced(itemAt: index, newValue: newPhoto)
                 }
                 completion(.success(()))
             case .failure(let error):
