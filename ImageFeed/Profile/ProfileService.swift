@@ -37,10 +37,16 @@ final class ProfileService {
     }
     
     private func makeRequest(token: String) -> URLRequest {
-        guard let url = URL(string: "\(Constants.defaultBaseURL)" + "/me") else { fatalError("Failed to create URL") }
+        guard let url = URL(string: "\(Constants.defaultBaseURl)" + "/me") else { fatalError("Failed to create URL") }
         var request = URLRequest(url: url)
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
+    }
+    
+    func clean() {
+        profile = nil
+        task?.cancel()
+        task = nil
     }
 }
 

@@ -21,7 +21,7 @@ final class ProfileImageService {
         let request = makeRequest(token: storageToken.token!, username: username)
         let session = URLSession.shared
         let task = session.objectTask(for: request) { [weak self] (result: Result<UserResult, Error>) in
-            guard let self = self else { return }
+            guard let self else { return }
             switch result {
             case .success(let decodedObject):
                 let avatarURL = ProfileImage(decodedData: decodedObject)
@@ -41,10 +41,16 @@ final class ProfileImageService {
     }
     
     private func makeRequest(token: String, username: String) -> URLRequest {
-        guard let url = URL(string: "\(Constants.defaultBaseURL)" + "/users/" + username) else { fatalError("Failed to create URL") }
+        guard let url = URL(string: "\(Constants.defaultBaseURl)" + "/users/" + username) else { fatalError("Failed to create URL") }
         var request = URLRequest(url: url)
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
+    }
+    
+    func clean() {
+        avatarURL = nil
+        task?.cancel()
+        task = nil
     }
 }
 
