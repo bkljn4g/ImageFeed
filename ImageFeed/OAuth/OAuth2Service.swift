@@ -48,9 +48,9 @@ func fetchOAuthToken(
 private func authTokenRequest(code: String) -> URLRequest {
     URLRequest.makeHTTPRequest(
         path: "/oauth/token"
-        + "?client_id=\(Constants.accessKey)"
-        + "&&client_secret=\(Constants.secretKey)"
-        + "&&redirect_uri=\(Constants.redirectURI)"
+        + "?client_id=\(AuthConfiguration.standard.accessKey)"
+        + "&&client_secret=\(AuthConfiguration.standard.secretKey)"
+        + "&&redirect_uri=\(AuthConfiguration.standard.redirectURI)"
         + "&&code=\(code)"
         + "&&grant_type=authorization_code",
         httpMethod: "POST",
@@ -71,7 +71,7 @@ private struct OAuthTokenResponseBody: Decodable {
 }
 
     extension URLRequest {
-        static func makeHTTPRequest(path: String,httpMethod: String,baseURL: URL = Constants.defaultBaseURl) -> URLRequest {
+        static func makeHTTPRequest(path: String,httpMethod: String,baseURL: URL = AuthConfiguration.standard.defaultBaseURL) -> URLRequest {
     var request = URLRequest(url: URL(string: path, relativeTo: baseURL)!)
     request.httpMethod = httpMethod
     return request
