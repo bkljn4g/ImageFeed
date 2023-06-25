@@ -7,18 +7,18 @@
 
 import UIKit
 
-let AccessKey = "xX8nhOiUpLKMY3-p0Kov3m2nzsbbSYZq2nRpeHFyaPs" // №3
-let SecretKey = "aJVLu2d3kj93tYkuqogROqHPhQkK-N3kVvdpvupA5HI" // №3
+let AccessKey = "q3wlhrsbHSwgaAaifw5LyVcTFdAoH-JLWq87Yowhqhg" // №2
+let SecretKey = "rFyVSUbmsnrY1njuRCAd466WLNyx6RNI0bJ9bg-qunc" // №2
 let RedirectURI = "urn:ietf:wg:oauth:2.0:oob"
 let AccessScope = "public+read_user+write_likes"
 let DefaultBaseURl = URL(string: "https://api.unsplash.com/")!
 let UnsplashAuthorizeURLString = "https://unsplash.com/oauth/authorize"
 
-// "q3wlhrsbHSwgaAaifw5LyVcTFdAoH-JLWq87Yowhqhg" - access key №1
-// "rFyVSUbmsnrY1njuRCAd466WLNyx6RNI0bJ9bg-qunc" - secret key №1
+// "q3wlhrsbHSwgaAaifw5LyVcTFdAoH-JLWq87Yowhqhg" - access key №2
+// "rFyVSUbmsnrY1njuRCAd466WLNyx6RNI0bJ9bg-qunc" - secret key №2
 
-// "d3-jvTAYCbyT5qpWnRIcQOW32j6EsTTw0rAQd5tasec" - access key №2
-// "EOM9ETJR252wxdPvETLy3Q_f9h7gWrUIzvJBINESc2Y" - secret key №2
+// "d3-jvTAYCbyT5qpWnRIcQOW32j6EsTTw0rAQd5tasec" - access key №1
+// "EOM9ETJR252wxdPvETLy3Q_f9h7gWrUIzvJBINESc2Y" - secret key №1
 
 // "xX8nhOiUpLKMY3-p0Kov3m2nzsbbSYZq2nRpeHFyaPs" - access key №3
 // "aJVLu2d3kj93tYkuqogROqHPhQkK-N3kVvdpvupA5HI" - secret key №3
