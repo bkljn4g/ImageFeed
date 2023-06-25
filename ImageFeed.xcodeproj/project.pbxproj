@@ -18,6 +18,8 @@
 		895276172A48A22400E438C1 /* WebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895276162A48A22400E438C1 /* WebViewPresenter.swift */; };
 		895276192A48A43500E438C1 /* AuthConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895276182A48A43400E438C1 /* AuthConfiguration.swift */; };
 		8952761B2A48A74600E438C1 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952761A2A48A74600E438C1 /* AuthHelper.swift */; };
+		8952761D2A48C88900E438C1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952761C2A48C88900E438C1 /* ProfilePresenter.swift */; };
+		8952761F2A48CA4400E438C1 /* ImageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952761E2A48CA4400E438C1 /* ImageListPresenter.swift */; };
 		8959A61B29D4CCB7000EF543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8959A61A29D4CCB7000EF543 /* Assets.xcassets */; };
 		8959A61E29D4CE82000EF543 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8959A61D29D4CE82000EF543 /* UIColor+Extensions.swift */; };
 		8973781529DB26AA0041B731 /* SF Pro Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8973781329DB25EC0041B731 /* SF Pro Display-Bold.ttf */; };
@@ -52,6 +54,8 @@
 		895276162A48A22400E438C1 /* WebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPresenter.swift; sourceTree = "<group>"; };
 		895276182A48A43400E438C1 /* AuthConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfiguration.swift; sourceTree = "<group>"; };
 		8952761A2A48A74600E438C1 /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
+		8952761C2A48C88900E438C1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		8952761E2A48CA4400E438C1 /* ImageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenter.swift; sourceTree = "<group>"; };
 		8959A61A29D4CCB7000EF543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8959A61D29D4CE82000EF543 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		8973781329DB25EC0041B731 /* SF Pro Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Pro Display-Bold.ttf"; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				8937C3032A3AACD20058D3AC /* ProfileService.swift */,
 				89DEC6FC29EEFA1A0079F66C /* ProfileViewController.swift */,
 				8937C3062A3C9D1C0058D3AC /* ProfileImageService.swift */,
+				8952761C2A48C88900E438C1 /* ProfilePresenter.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				89B1B2FB29C9DC4000C0146F /* ImagesListViewController.swift */,
 				8947927E29D60A33002BA886 /* ImagesListCell.swift */,
 				89465C202A41B5EE00FBC551 /* ImagesListService.swift */,
+				8952761E2A48CA4400E438C1 /* ImageListPresenter.swift */,
 			);
 			path = ImageList;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				895276172A48A22400E438C1 /* WebViewPresenter.swift in Sources */,
 				8937C3042A3AACD20058D3AC /* ProfileService.swift in Sources */,
 				89DEC6FD29EEFA1A0079F66C /* ProfileViewController.swift in Sources */,
+				8952761F2A48CA4400E438C1 /* ImageListPresenter.swift in Sources */,
 				89B1B2FC29C9DC4000C0146F /* ImagesListViewController.swift in Sources */,
 				8952761B2A48A74600E438C1 /* AuthHelper.swift in Sources */,
 				897F915D2A3E609200662E02 /* AlertModel.swift in Sources */,
@@ -315,6 +322,7 @@
 				8914B5582A1024FB00DA370C /* SingleImageViewController.swift in Sources */,
 				8937C3022A3AA84C0058D3AC /* UIBlockingProgressHUD.swift in Sources */,
 				897F915B2A3E412200662E02 /* TabBarController.swift in Sources */,
+				8952761D2A48C88900E438C1 /* ProfilePresenter.swift in Sources */,
 				8947927F29D60A33002BA886 /* ImagesListCell.swift in Sources */,
 				89B1B2FA29C9DC4000C0146F /* SceneDelegate.swift in Sources */,
 				893805862A35F87A002FB727 /* OAuthTokenResponseBody.swift in Sources */,

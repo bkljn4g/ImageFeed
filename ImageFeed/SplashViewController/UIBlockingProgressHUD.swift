@@ -10,7 +10,7 @@ import ProgressHUD
 
 final class UIBlockingProgressHUD {
     private static var window: UIWindow? { // вычисляемое свойство, возвращает из массива апки первое окно
-        return UIApplication.shared.windows.first // синглтон объекта текущего приложения
+        UIApplication.shared.windows.first // синглтон объекта текущего приложения
     }
     
     static func show() { // используется для отображения индикатора загрузки и блокировки UI
