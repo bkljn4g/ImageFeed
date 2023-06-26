@@ -16,8 +16,8 @@ final class SingleImageViewController: UIViewController {
         }
     }
     
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     private let alert = AlertPresenter()
     
@@ -55,11 +55,12 @@ final class SingleImageViewController: UIViewController {
         }
     }
 
-    @IBAction private func didTapBackButton() {
-        dismiss(animated: true, completion: nil)
+    
+    @IBAction func didTapBackButton(_ sender: UIButton) {
+        dismiss(animated: true)
     }
     
-    @IBAction func didTapShareButton(_ sender: UIButton) {
+    @IBAction private func didTapShareButton(_ sender: UIButton) {
         let activityItem = [imageView.image]
         let avc = UIActivityViewController(activityItems: activityItem as [AnyObject], applicationActivities: nil)
         present(avc, animated: true)

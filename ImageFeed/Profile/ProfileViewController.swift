@@ -33,7 +33,7 @@ final class ProfileViewController: UIViewController, ProfileViewControllerProtoc
     lazy var someTextLabel = UILabel()
     private lazy var exitButton: UIButton = {
         let exitButton = UIButton.systemButton(
-            with: UIImage(named: "logout_button")!,
+            with: UIImage(systemName: "ipad.and.arrow.forward")!, // named: "logout_button"
             target: self,
             action: #selector(self.didTapButton))
         return exitButton
