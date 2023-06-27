@@ -7,41 +7,53 @@
 
 import UIKit
 import Kingfisher
-import WebKit
 
-final class ProfileViewController: UIViewController {
+protocol ProfileViewControllerProtocol: AnyObject {
+    var presenter: ProfilePresenterProtocol { get set }
+    var profileImage: UIImageView { get set }
+    var surnameLabel: UILabel { get set }
+    var emailLabel: UILabel { get set }
+    var someTextLabel: UILabel { get set }
     
-    private let profileImage = UIImageView()
-    private let surnameLabel = UILabel()
-    private let emailLabel = UILabel()
-    private let someTextLabel = UILabel()
+    func updateAvatar()
+    func configView()
+    func makeConstraints()
+    func showLogoutAlert()
+}
+
+final class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
+    
+    lazy var presenter: ProfilePresenterProtocol = {
+        return ProfilePresenter()
+    }()
+    
+    lazy var profileImage = UIImageView()
+    lazy var surnameLabel = UILabel()
+    lazy var emailLabel = UILabel()
+    lazy var someTextLabel = UILabel()
     private lazy var exitButton: UIButton = {
-        let exitButton = UIButton.systemButton(with: UIImage(named: "logout_button")!, target: self, action: #selector(self.didTapButton))
+        let exitButton = UIButton.systemButton(
+            with: UIImage(systemName: "ipad.and.arrow.forward")!, // named: "logout_button"
+            target: self,
+            action: #selector(self.didTapButton))
         return exitButton
     }()
-    private let profileService = ProfileService.shared
-    private var profileImageServiceObserver: NSObjectProtocol?
-    private let storageToken = OAuth2TokenStorage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ypBlack
         configView()
         makeConstraints()
-        updateProfileDetails(profile: profileService.profile!)
-        profileImageServiceObserver = NotificationCenter.default
-            .addObserver(
-                forName: ProfileImageService.didChangeNotification,
-                object: nil,
-                queue: .main
-            ) { [weak self] _ in
-                guard let self = self else { return }
-                self.updateAvatar()
-            }
+        presenter.view = self
+        presenter.viewDidLoad()
         updateAvatar()
     }
     
-    private func configView() {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func configView() {
         view.addSubview(profileImage)
         view.addSubview(surnameLabel)
         view.addSubview(emailLabel)
@@ -49,13 +61,10 @@ final class ProfileViewController: UIViewController {
         view.addSubview(exitButton)
         
         profileImage.image = UIImage(named: "avatar_image")
-        surnameLabel.text = "Ann Goncharova"
         surnameLabel.font = .systemFont(ofSize: 23, weight: .bold)
         surnameLabel.textColor = .ypWhite
-        emailLabel.text = "@goncharova_ann"
         emailLabel.font = .systemFont(ofSize: 13)
         emailLabel.textColor = .ypGray
-        someTextLabel.text = "11 sprint...must die"
         someTextLabel.font = .systemFont(ofSize: 13)
         someTextLabel.textColor = .ypWhite
         exitButton.setImage(UIImage(named: "logout_button"), for: .normal)
@@ -63,7 +72,7 @@ final class ProfileViewController: UIViewController {
         
     }
     
-    private func makeConstraints() {
+    func makeConstraints() {
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         surnameLabel.translatesAutoresizingMaskIntoConstraints = false
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -86,7 +95,7 @@ final class ProfileViewController: UIViewController {
         ])
     }
     
-    private func updateAvatar() {
+    func updateAvatar() {
         guard
             let profileImageURL = ProfileImageService.shared.avatarURL,
             let url = URL(string: profileImageURL)
@@ -106,43 +115,8 @@ final class ProfileViewController: UIViewController {
         showLogoutAlert()
     }
     
-    private func logout() {
-        storageToken.clearToken()
-        WebViewViewController.clean()
-        cleanServicesData()
-        tabBarController?.dismiss(animated: true)
-        guard let window = UIApplication.shared.windows.first else {
-            fatalError("Invalid Configuration") }
-        window.rootViewController = SplashViewController()
-    }
-    
-    private func showLogoutAlert() {
-        let alert = UIAlertController(
-            title: "Bye, Bye!",
-            message: "Are you shure you want to continue?",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] action in
-            guard let self = self else { return }
-            self.logout()
-        }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+    func showLogoutAlert() {
+        let alert = presenter.makeAlert()
         present(alert, animated: true, completion: nil)
     }
-    
-    private func cleanServicesData() {
-        ImagesListService.shared.clean()
-        ProfileService.shared.clean()
-        ProfileImageService.shared.clean()
-    }
 }
-
-extension ProfileViewController {
-    private func updateProfileDetails(profile: Profile?) {
-        guard let profile = profileService.profile else { return }
-        surnameLabel.text = profile.name
-        emailLabel.text = profile.loginName
-        someTextLabel.text = profile.bio
-    }
-}
-
