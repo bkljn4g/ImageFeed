@@ -58,15 +58,15 @@ final class ProfilePresenter: ProfilePresenterProtocol {
     
     func makeAlert() -> UIAlertController {
         let alert = UIAlertController(
-            title: "Уже",
-            message: "Are you sure you want to continue?",
+            title: "Пока, пока",
+            message: "Уверены, что хотите выйти?",
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] action in
+        alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { [weak self] action in
             guard let self = self else { return }
             logout()
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
         alert.dismiss(animated: true)
         return alert
     }

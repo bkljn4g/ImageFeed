@@ -61,13 +61,10 @@ final class ProfileViewController: UIViewController, ProfileViewControllerProtoc
         view.addSubview(exitButton)
         
         profileImage.image = UIImage(named: "avatar_image")
-        surnameLabel.text = "Ann Goncharova"
         surnameLabel.font = .systemFont(ofSize: 23, weight: .bold)
         surnameLabel.textColor = .ypWhite
-        emailLabel.text = "@goncharova_ann"
         emailLabel.font = .systemFont(ofSize: 13)
         emailLabel.textColor = .ypGray
-        someTextLabel.text = "11 sprint...must die"
         someTextLabel.font = .systemFont(ofSize: 13)
         someTextLabel.textColor = .ypWhite
         exitButton.setImage(UIImage(named: "logout_button"), for: .normal)
